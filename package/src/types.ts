@@ -16,7 +16,9 @@ export type iCSMParams<T extends MaterialConstructor> = {
   cacheKey?: () => string
   patchMap?: iCSMPatchMap
   silent?: boolean
-  uniforms?: { [key: string]: THREE.IUniform<any> }
+  uniforms?: { [key: string]: THREE.IUniform<any>
+  toneMapped?: boolean
+  transparent?: boolean}
 } & (MaterialParams<T> extends undefined ? any : MaterialParams<T>)
 
 export type iCSMUpdateParams<T extends MaterialConstructor> = Partial<Omit<iCSMParams<T>, 'baseMaterial'>>
